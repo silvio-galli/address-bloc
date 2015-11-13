@@ -74,9 +74,7 @@ class MenuController
 		answer = gets.chomp
 		
 		if answer == "YES"
-			@address_book.entries.each do |entry|
-				@address_book.entries.delete(entry)
-			end
+			@address_book.entries = []
 		else
 			system "clear"
 			main_menu
