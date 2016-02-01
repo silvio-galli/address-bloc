@@ -19,7 +19,7 @@ class AddressBook
 		@entries.insert(index, Entry.new(name, phone_number, email))
 	end
 
-	def remove_entry(name, phone_number, email)
+	def remove_entry(name)
 		index = 0
 		entries.each do |entry|
 			if name == entry.name
@@ -27,7 +27,7 @@ class AddressBook
 			end
 			index += 1
 		end
-		@entries.delete(entries[index])
+		@entries.delete(self[index])
 	end
 
 end

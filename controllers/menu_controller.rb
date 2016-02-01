@@ -18,7 +18,7 @@ class MenuController
 		print "Enter your selection: "
 
 		selection = gets.to_i
-		
+
 		case selection
 		when 1
 			system "clear"
@@ -66,6 +66,11 @@ class MenuController
 	def view_entry_by_number
 		print "Insert entry number: "
 		entry_number = gets.chomp.to_i
+
+		unless entry_number =~ /^\d+$/
+    	print 'Invalid input: must enter a number' "\n\n"
+    	main_menu
+  	end
 
 		if @address_book.entries.count == 0
 			puts "The Address Book is empty"
